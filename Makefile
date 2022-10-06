@@ -1,7 +1,8 @@
 SRCS			=	ft_isalnum.c ft_isprint.c ft_isdigit.c ft_isalpha.c ft_isascii.c \
 					ft_strlcat.c ft_strlcpy.c ft_strlen.c \
 					ft_memcpy.c ft_memmove.c \
-					ft_bzero.c ft_memset.c
+					ft_bzero.c ft_memset.c \
+					ft_toupper.c ft_tolower.c
 OBJS			= $(SRCS:.c=.o)
 # BONUS			=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
 # 					ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
