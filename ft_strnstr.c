@@ -6,62 +6,52 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 08:04:19 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/06 16:24:48 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/07 08:14:44 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *	strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	
+	size_t	llen;
+
+	llen = ft_strlen(little);
+	if (llen == 0)
+		return ((char *) big);
+	while (len >= llen || (big == NULL && len > 0))
+	{
+		if (ft_strncmp(big, little, llen) == 0)
+			return ((char *) big);
+		big++;
+		len--;
+	}
+	return (NULL);
 }
 
+// char	*ft_strnstr(const char *big, const char *little, size_t len)
+// {
+// 	int		i;
+// 	int		j;
+// 	int		flag;
 
-// search to_find in str[0:len(to_find)-1]
-int	ft_strcheck(char *str_i, char *to_find)
-{
-	int	j;
-
-	if (ft_strlen(str_i) < ft_strlen(to_find))
-	{
-		return (0);
-	}
-	else
-	{
-		j = 0;
-		while (to_find[j] != '\0')
-		{
-			if (str_i[j] != to_find[j])
-			{
-				return (0);
-			}
-			j++;
-		}
-		return (1);
-	}
-}
-
-// search to_find in str[0:len(str)-1]
-char	*ft_strstr(char *str, char *to_find)
-{
-	if (*str == '\0')
-	{
-		if (*to_find == '\0')
-		{
-			return (str);
-		}
-		else
-		{
-			return (NULL);
-		}
-	}
-	if (ft_strcheck(str, to_find) == 1)
-	{
-		return (str);
-	}
-	else
-	{
-		return (ft_strstr(str + 1, to_find));
-	}
-}
+// 	i = 0;
+// 	while (i <= (int)len - (int)ft_strlen(little))
+// 	{
+// 		flag = 1;
+// 		j = 0;
+// 		while (little[j] != '\0')
+// 		{
+// 			if (big[i + j] != little[j])
+// 			{
+// 				flag = 0;
+// 				break ;
+// 			}
+// 			j++;
+// 		}
+// 		if (flag == 1)
+// 			return ((char *) &big[i]);
+// 		i++;
+// 	}
+// 	return (NULL);
+// }
