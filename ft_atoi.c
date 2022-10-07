@@ -6,13 +6,13 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 13:20:48 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/07 10:03:58 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/07 10:22:37 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	process_digit(char *nptr, long code)
+static int	process_digit(const char *nptr, long code)
 {
 	long	n;
 	long	d;
@@ -39,7 +39,7 @@ static int	process_digit(char *nptr, long code)
 	return ((int) n);
 }
 
-int	ft_atoi(char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	long	code;
 
