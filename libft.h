@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 11:11:04 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/07 10:17:05 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/07 11:13:40 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <ctype.h>
 # include <limits.h>
+# include <stdlib.h>
 # include <string.h>
 # include <strings.h>
 
@@ -40,5 +41,6 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_atoi(const char *nptr);
+void	*ft_calloc(size_t count, size_t size);
 
 #endif	/* FT_LIBFT_H */
