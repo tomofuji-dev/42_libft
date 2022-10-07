@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 11:11:04 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/07 16:20:53 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/08 08:32:09 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *str, char c);
+char	*ft_itoa(int n);
 
 #endif	/* FT_LIBFT_H */
