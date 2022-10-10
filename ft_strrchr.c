@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 11:50:26 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/06 12:26:51 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/08 15:11:38 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	size_t	i;
 
 	i = ft_strlen(s);
 	while (i >= 0)
 	{
 		if (s[i] == (char)c)
 			return ((char *)(s + i));
+		if (i == 0)
+			break ;
 		i--;
 	}
 	return (NULL);

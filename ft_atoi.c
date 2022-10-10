@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 13:20:48 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/07 10:22:37 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/08 13:46:58 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,12 @@ int	ft_atoi(const char *nptr)
 	while (((*nptr >= '\t') && (*nptr <= '\r')) || (*nptr == ' '))
 		nptr++;
 	code = 1;
-	while ((*nptr == '-') || (*nptr == '+'))
+	if (*nptr == '-')
 	{
-		if (*nptr == '-')
-			code *= -1;
+		code *= -1;
 		nptr++;
 	}
+	else if (*nptr == '+')
+		nptr++;
 	return (process_digit(nptr, code));
 }
