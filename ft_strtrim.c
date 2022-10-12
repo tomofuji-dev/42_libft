@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 13:43:03 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/07 14:56:13 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/11 09:25:56 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1 || !set)
 		return (NULL);
 	if (ft_strlen(s1) == 0)
-		return ((char *)s1);
+		return (ft_calloc(1, sizeof(char)));
 	start = 0;
 	end = ft_strlen(s1) - 1;
 	while (s1[start] && is_in(s1[start], set))
@@ -42,6 +42,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	p = ft_calloc(end - start + 2, sizeof(char));
 	if (!p)
 		return (NULL);
-	ft_strlcpy(p, &s1[start], end - start + 2);
+	ft_memcpy(p, s1 + start, end - start + 1);
 	return (p);
 }

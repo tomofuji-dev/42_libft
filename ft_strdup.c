@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 11:46:02 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/07 13:33:27 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/11 08:18:31 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ char	*ft_strdup(const char *s1)
 	char		*p;
 
 	len = ft_strlen(s1) + 1;
-	p = malloc(len * sizeof(char));
+	p = ft_calloc(len, sizeof(char));
 	if (!p)
 		return (NULL);
-	ft_strlcpy(p, s1, len);
+	ft_memcpy(p, s1, len);
 	return (p);
 }

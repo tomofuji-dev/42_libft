@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 12:01:18 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/07 13:24:41 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/11 09:21:58 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (buff <= 0 || len == 0)
 		return ((char *)ft_calloc(1, sizeof(char)));
 	if ((size_t)buff < len)
-		psize = buff + 1;
+		psize = buff;
 	else
-		psize = len + 1;
-	p = (char *)ft_calloc(psize, sizeof(char));
+		psize = len;
+	p = (char *)ft_calloc(psize + 1, sizeof(char));
 	if (!p)
 		return (NULL);
-	ft_strlcpy(p, &s[start], psize);
+	ft_memcpy(p, s + start, psize);
 	return (p);
 }
 
