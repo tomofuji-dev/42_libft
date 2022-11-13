@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: t.fuji <t.fuji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 11:08:36 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/11/13 09:14:23 by tfujiwar         ###   ########.fr       */
+/*   Created: 2022/11/08 10:34:45 by t.fuji            #+#    #+#             */
+/*   Updated: 2022/11/08 10:36:48 by t.fuji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+int	ft_isspace(int c)
 {
-	unsigned char	*p;
-
-	if (size != 0 && count > SSIZE_MAX / size)
-		return (NULL);
-	p = malloc(count * size);
-	if (!p)
-		return (NULL);
-	p = ft_memset(p, 0, count * size);
-	return (p);
+	return (((c >= '\t') && (c <= '\r')) || (c == ' '));	
 }
